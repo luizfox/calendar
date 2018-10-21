@@ -10,9 +10,10 @@ const Month = ({month}) => {
   let firstDay = date.getDay();
   let lastDay = new Date(2018, month+1, 0).getDate();
 
-  const numberOfLines = 5;
-  const numberOfRows = 7;
-  let daysMatrix = [[0,0,0,0,0,0,0], [0,0,0,0,0,0,0], [0,0,0,0,0,0,0], [0,0,0,0,0,0,0], [0,0,0,0,0,0,0]];
+  let daysMatrix = [[0,0,0,0,0,0,0], [0,0,0,0,0,0,0], [0,0,0,0,0,0,0],
+                    [0,0,0,0,0,0,0], [0,0,0,0,0,0,0], [0,0,0,0,0,0,0]];
+  const numberOfLines = daysMatrix.length;
+  const numberOfRows = daysMatrix[0].length;
   let currentDay = 1;
 
   for (let currentLine = 0; currentLine < numberOfLines; currentLine++){

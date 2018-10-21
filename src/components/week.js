@@ -29,7 +29,9 @@ const printDay = (week, weekIndex, month) =>{
   return week.map((day, index) =>{
     let today = isToday (2018, month, day);
     return (
-      <Day day={day} key={`${index}-${weekIndex}`} index={index} today={today}/>
+      <Day day={day} key={`${index}-${weekIndex}`} index={index} today={today}
+        year={2018} month={month}
+      />
     );
   });
 }
