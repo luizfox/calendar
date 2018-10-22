@@ -15,22 +15,23 @@ const isToday = (year, month, day) => {
 const Week = (props) => {
   let daysMatrix = props.daysMatrix;
   let month = props.month;
+  let year = props.year;
   return daysMatrix.map ((week, weekIndex) => {
     return (
-      <tr key={week}>
-      {printDay(week, weekIndex, month)}
+      <tr key={`${week}${weekIndex}`}>
+      {printDay(year, week, weekIndex, month)}
       </tr>
     );
   });
 }
 
 
-const printDay = (week, weekIndex, month) =>{
+const printDay = (year, week, weekIndex, month) =>{
   return week.map((day, index) =>{
-    let today = isToday (2018, month, day);
+    let today = isToday (year, month, day);
     return (
       <Day day={day} key={`${index}-${weekIndex}`} index={index} today={today}
-        year={2018} month={month}
+        year={year} month={month}
       />
     );
   });

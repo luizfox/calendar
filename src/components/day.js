@@ -4,7 +4,7 @@ export default class Day extends Component {
   constructor (props){
     super(props);
     this.state = {
-      color: "clean"
+      color: ""
     };
     this.onClickHandler = this.onClickHandler.bind(this);
     this.dropDownId = this.dropDownId.bind(this);
@@ -13,26 +13,24 @@ export default class Day extends Component {
   }
 
   addStyle(){
-    let style = "dropbtn ";
-    if (this.props.index === 0 || this.props.index === 6){
-      style="weekend";
-    }
-
+    let className = "";
     if (this.props.today == true){
-      style+=" table-info";
+      className+=" currentdate ";
     }
-
-    style+=" " + this.state.color;
-
-    return style;
+    if (this.props.index === 0 || this.props.index === 6){
+      className+="weekend ";
+    }
+    className+= " dropbtn ";
+    className+=" " + this.state.color;
+    return className;
   }
 
   dropDownId(){
-    return `myDropdown${this.props.year}${this.props.month}${this.props.day}`;
+    return `dropdown${this.props.year}${this.props.month}${this.props.day}`;
   }
 
   textId(){
-    return `myDropdown${this.props.year}${this.props.month}${this.props.day}`;
+    return `dayText${this.props.year}${this.props.month}${this.props.day}`;
   }
 
   onClickHandler(event){

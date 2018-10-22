@@ -1,5 +1,13 @@
-.weekend, .monthtitle {
+.monthtitle {
   color: SteelBlue;
+}
+
+.weekend{
+  color: SteelBlue;
+}
+
+.currentdate{
+  text-decoration: underline overline;
 }
 
 .dropbtn {
@@ -29,7 +37,7 @@
 
 /* Links inside the dropdown */
 .dropdown-content a {
-    color: black;
+    //color: black;
     padding: 12px 16px;
     text-decoration: none;
     display: block;
@@ -41,7 +49,7 @@
 /* Show the dropdown menu (use JS to add this class to the .dropdown-content container when the user clicks on the dropdown button) */
 .show {display:block;}
 
-.clean{}
+.clean{ color: black}
 .holiday{
   background-color: red;
 }

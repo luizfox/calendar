@@ -3,12 +3,14 @@ import DaysBar from './days_bar';
 import Week from './week';
 
 
-const Month = ({month}) => {
-  let date = new Date(2018, month),
+const Month = (props) => {
+  let month = props.month;
+  let year = props.year;
+  let date = new Date(year, month),
     locale = "en-NZ",
     monthName = date.toLocaleString(locale, { month: "long" });
   let firstDay = date.getDay();
-  let lastDay = new Date(2018, month+1, 0).getDate();
+  let lastDay = new Date(year, month+1, 0).getDate();
 
   let daysMatrix = [[0,0,0,0,0,0,0], [0,0,0,0,0,0,0], [0,0,0,0,0,0,0],
                     [0,0,0,0,0,0,0], [0,0,0,0,0,0,0], [0,0,0,0,0,0,0]];
@@ -31,7 +33,7 @@ const Month = ({month}) => {
       <table className="table table-striped table-hover table-sm">
         <DaysBar />
         <tbody>
-          <Week daysMatrix={daysMatrix} month={month}/>
+          <Week daysMatrix={daysMatrix} month={month} year={year}/>
         </tbody>
       </table>
     </div>
